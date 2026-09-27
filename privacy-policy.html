@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RenéCare 365 – Zásady ochrany soukromí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+            line-height: 1.6;
+            color: #222;
+        }
+        h1, h2 { line-height: 1.25; }
+        h1 { margin-bottom: 8px; }
+        h2 { margin-top: 28px; }
+        .meta {
+            color: #555;
+            margin-bottom: 28px;
+        }
+        .box {
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #f7f7f7;
+        }
+        a { color: #075ea8; }
+    </style>
+</head>
+<body>
+
+<h1>Zásady ochrany soukromí – RenéCare 365</h1>
+
+<div class="meta">
+    Poslední aktualizace: 27. 9. 2026
+</div>
+
+<div class="box">
+    <strong>Správce / provozovatel:</strong> René Šikl<br>
+    <strong>Aplikace:</strong> RenéCare 365<br>
+    <strong>Kontakt:</strong>
+    <a href="mailto:revmazdravi365@gmail.com">revmazdravi365@gmail.com</a>
+</div>
+
+<h2>1. Účel aplikace</h2>
+
+<p>
+RenéCare 365 je aplikace určená k osobní evidenci a organizaci informací
+souvisejících se zdravím, léčbou, léky, lékaři, kontrolami a dalšími
+souvisejícími záznamy.
+</p>
+
+<p>
+Aplikace neposkytuje diagnózu ani individuální léčebné rozhodnutí
+a nenahrazuje lékaře ani jiného kvalifikovaného zdravotnického pracovníka.
+</p>
+
+<h2>2. Zdravotní a osobní údaje uložené v zařízení</h2>
+
+<p>
+Údaje zadané uživatelem, například informace o diagnózách, lécích,
+dávkování, kontrolách, potížích, členech a dalších zdravotních záznamech,
+jsou primárně ukládány lokálně v zařízení uživatele.
+</p>
+
+<p>
+Tyto zdravotní záznamy nejsou automaticky odesílány provozovateli
+RenéCare 365 ani do společné databáze lékařů.
+</p>
+
+<h2>3. Dobrovolný návrh lékaře do společné databáze</h2>
+
+<p>
+Pokud uživatel ručně přidá lékaře, může dobrovolně zvolit možnost navrhnout
+tohoto lékaře do společné databáze.
+</p>
+
+<p>
+Při tomto odeslání jsou předávány pouze profesní údaje lékaře:
+</p>
+
+<ul>
+    <li>jméno lékaře,</li>
+    <li>odbornost,</li>
+    <li>pracovní telefon,</li>
+    <li>pracovní e-mail,</li>
+    <li>čas vytvoření návrhu,</li>
+    <li>stav návrhu.</li>
+</ul>
+
+<p>
+Diagnózy uživatele, názvy jeho léků, dávkování, poznámky ani jiné zdravotní
+údaje uživatele nejsou součástí tohoto návrhu.
+</p>
+
+<p>
+Pro tuto funkci aplikace používá služby Firebase společnosti Google,
+zejména Firebase Authentication, Cloud Firestore a Firebase App Check.
+Přihlášení probíhá anonymně a aplikace pro něj od uživatele nevyžaduje
+jméno, e-mail ani heslo.
+</p>
+
+<p>
+Firebase a související služby Google mohou v rámci zabezpečení a provozu
+služby zpracovávat technické informace, například IP adresu, identifikátory
+aplikace či zařízení a údaje potřebné k ověření pravosti aplikace.
+</p>
+
+<h2>4. Veřejná databáze NRPZS</h2>
+
+<p>
+Aplikace může z internetu stahovat veřejně dostupná data Národního registru
+poskytovatelů zdravotních služeb (NRPZS), zveřejněná Ústavem zdravotnických
+informací a statistiky ČR (ÚZIS).
+</p>
+
+<p>
+Při této aktualizaci aplikace pouze stahuje veřejná data. Diagnózy, léky,
+poznámky ani jiné zdravotní údaje uživatele nejsou do NRPZS odesílány.
+Při běžné internetové komunikaci může cílový server zpracovat standardní
+technické síťové údaje, například IP adresu.
+</p>
+
+<h2>5. Google Play a služby Google</h2>
+
+<p>
+Aplikace používá vybrané služby Google Play, například kontrolu aktualizací,
+Google Code Scanner a bezpečnostní služby související s Firebase App Check
+a Play Integrity.
+</p>
+
+<p>
+Tyto služby mohou zpracovávat technické informace potřebné pro své fungování
+podle pravidel společnosti Google.
+</p>
+
+<h2>6. Analytika, reklama a sledování</h2>
+
+<p>
+RenéCare 365 nepoužívá Firebase Analytics ani Firebase Crashlytics
+a neobsahuje reklamní SDK provozované za účelem zobrazování reklam
+nebo vytváření reklamních profilů uživatele.
+</p>
+
+<h2>7. Servisní diagnostika</h2>
+
+<p>
+Aplikace obsahuje servisní diagnostiku určenou k řešení technických problémů.
+Diagnostické soubory jsou navrženy tak, aby automaticky neobsahovaly jméno
+uživatele, jména členů, diagnózy, názvy léků, dávkování, poznámky ani jiné
+zdravotní údaje.
+</p>
+
+<p>
+Odeslání servisní diagnostiky probíhá pouze po akci uživatele prostřednictvím
+e-mailové aplikace nebo jiné uživatelem zvolené služby.
+</p>
+
+<h2>8. Zálohování a přenos dat</h2>
+
+<p>
+RenéCare 365 má vypnuté systémové zálohování dat aplikace. Pravidla aplikace
+rovněž výslovně vylučují lokální data aplikace z cloudových záloh
+a ze systémového přenosu dat mezi zařízeními.
+</p>
+
+<h2>9. Uchování a smazání lokálních dat</h2>
+
+<p>
+Lokální data zůstávají v zařízení uživatele do jejich odstranění uživatelem.
+Kompletní lokální data aplikace lze odstranit prostřednictvím nastavení
+Androidu vymazáním dat aplikace nebo odinstalováním RenéCare 365.
+</p>
+
+<p>
+Dotazy týkající se údajů zpracovaných prostřednictvím online služeb
+RenéCare 365 lze zaslat na
+<a href="mailto:revmazdravi365@gmail.com">revmazdravi365@gmail.com</a>.
+</p>
+
+<h2>10. Zabezpečení</h2>
+
+<p>
+RenéCare 365 používá běžné bezpečnostní mechanismy platformy Android,
+včetně možnosti chránit přístup k aplikaci pomocí PINu nebo biometrického
+ověření. Pro přístup ke společné databázi lékařů jsou používány také
+bezpečnostní mechanismy Firebase App Check.
+</p>
+
+<p>
+Žádný způsob elektronického ukládání nebo přenosu dat však nemůže zaručit
+absolutní bezpečnost.
+</p>
+
+<h2>11. Děti</h2>
+
+<p>
+RenéCare 365 není určena k tomu, aby provozovatel cíleně shromažďoval
+osobní údaje dětí prostřednictvím online účtu. Údaje o členech rodiny,
+které uživatel zadá do aplikace, zůstávají primárně uloženy lokálně
+v jeho zařízení.
+</p>
+
+<h2>12. Zdravotní upozornění</h2>
+
+<p>
+Informace a připomínky poskytované RenéCare 365 mají pouze organizační
+a evidenční charakter. Uživatel se nemá na oznámení aplikace spoléhat
+jako na jediný způsob řízení léčby nebo užívání léků.
+</p>
+
+<p>
+O změně léčby, dávkování nebo zdravotního postupu má rozhodovat
+kvalifikovaný zdravotnický pracovník.
+</p>
+
+<p>
+V případě akutního ohrožení zdraví nebo života kontaktujte zdravotnickou
+záchrannou službu na čísle 155 nebo jednotné evropské číslo 112.
+</p>
+
+<h2>13. Změny těchto zásad</h2>
+
+<p>
+Tyto zásady mohou být aktualizovány například při změně funkcí aplikace,
+použitých služeb nebo právních požadavků. Aktuální verze bude zveřejněna
+na této stránce.
+</p>
+
+<h2>14. Kontakt</h2>
+
+<p>
+René Šikl<br>
+RenéCare 365<br>
+<a href="mailto:revmazdravi365@gmail.com">revmazdravi365@gmail.com</a>
+</p>
+
+</body>
+</html>
