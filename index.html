@@ -1,300 +1,106 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RenéCare 365 – zdraví přehledně na jednom místě</title>
-  <meta name="description" content="RenéCare 365 pomá́há přehledně evidovat léky, lékaře, diagnózy, kontroly, očkování, doplňky stravy a péči o více členů.">
-  <style>
-    :root{
-      --bg:#07111f;
-      --bg2:#0b1627;
-      --panel:#101c2f;
-      --panel2:#0d1828;
-      --text:#f4f7fb;
-      --muted:#aeb9ca;
-      --line:#22324b;
-      --blue:#2f7df4;
-      --cyan:#27c4cf;
-      --green:#27c59a;
-      --max:1180px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-      background:
-        radial-gradient(circle at 15% 5%, rgba(47,125,244,.15), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(39,196,207,.10), transparent 26%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
-    header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(7,17,31,.86);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.2rem}
-    .logo{
-      width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--blue),var(--cyan));
-      box-shadow:0 8px 24px rgba(47,125,244,.26);font-size:1.25rem
-    }
-    nav{display:flex;align-items:center;gap:26px;color:#dbe4f1;font-size:.95rem}
-    nav a:hover{color:white}
-    .nav-cta{
-      padding:10px 16px;border-radius:10px;
-      background:linear-gradient(135deg,var(--blue),#2265cc);
-      font-weight:700
-    }
-    .hero{
-      min-height:610px;display:grid;grid-template-columns:1.08fr .92fr;
-      align-items:center;gap:56px;padding:72px 0 58px
-    }
-    .eyebrow{color:var(--cyan);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
-    h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.98;margin:16px 0 24px;letter-spacing:-.045em}
-    .hero p{font-size:1.18rem;color:var(--muted);max-width:680px;margin:0 0 30px}
-    .actions{display:flex;flex-wrap:wrap;gap:14px}
-    .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:11px;font-weight:800;border:1px solid var(--line)}
-    .btn.primary{background:linear-gradient(135deg,var(--blue),#2368d7);border-color:transparent}
-    .btn.secondary{background:rgba(255,255,255,.025)}
-    .hero-card{
-      position:relative;min-height:420px;border:1px solid var(--line);border-radius:30px;
-      background:linear-gradient(145deg,rgba(18,34,56,.96),rgba(8,19,33,.96));
-      box-shadow:0 26px 70px rgba(0,0,0,.36);padding:28px;overflow:hidden
-    }
-    .hero-card:before{
-      content:"";position:absolute;width:270px;height:270px;border-radius:50%;
-      background:rgba(47,125,244,.17);filter:blur(20px);right:-80px;top:-90px
-    }
-    .phone{
-      position:absolute;width:235px;height:430px;border-radius:34px;
-      border:8px solid #202d40;background:#0b1523;
-      box-shadow:0 22px 55px rgba(0,0,0,.45);padding:18px 15px
-    }
-    .phone.one{left:55px;top:24px;transform:rotate(-7deg)}
-    .phone.two{right:35px;top:55px;transform:rotate(6deg)}
-    .notch{width:86px;height:17px;border-radius:18px;background:#253449;margin:0 auto 18px}
-    .screen-title{font-size:1.15rem;font-weight:800;margin-bottom:15px}
-    .mini-card{background:#111f33;border:1px solid #22344f;border-radius:12px;padding:11px 12px;margin:9px 0;color:#dce6f2;font-size:.86rem}
-    .mini-card b{display:block;color:white;margin-bottom:2px}
-    section{padding:72px 0}
-    .section-head{text-align:center;max-width:760px;margin:0 auto 40px}
-    .section-head h2{font-size:clamp(2rem,4vw,3.25rem);margin:0 0 12px;letter-spacing:-.03em}
-    .section-head p{color:var(--muted);margin:0}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .card{
-      background:linear-gradient(180deg,rgba(18,31,50,.9),rgba(11,23,39,.95));
-      border:1px solid var(--line);border-radius:18px;padding:24px;min-height:195px
-    }
-    .ico{
-      width:46px;height:46px;border-radius:13px;display:grid;place-items:center;
-      background:rgba(47,125,244,.13);border:1px solid rgba(47,125,244,.25);font-size:1.35rem;margin-bottom:18px
-    }
-    .card h3{margin:0 0 8px;font-size:1.08rem}
-    .card p{margin:0;color:var(--muted);font-size:.95rem}
-    .privacy{
-      display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch
-    }
-    .privacy .box{
-      background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:30px
-    }
-    .checks{display:grid;gap:13px;margin-top:20px;color:#dfe8f4}
-    .check{display:flex;gap:10px;align-items:flex-start}
-    .check span:first-child{color:var(--green);font-weight:900}
-    .notice{
-      margin-top:24px;padding:15px 17px;border-radius:13px;background:rgba(39,196,207,.08);
-      border:1px solid rgba(39,196,207,.2);color:#d7f7f8
-    }
-    .contact{
-      display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;
-      padding:34px;border-radius:22px;background:linear-gradient(135deg,rgba(47,125,244,.16),rgba(39,196,207,.10));
-      border:1px solid var(--line)
-    }
-    .contact h2{margin:0 0 6px}
-    .contact p{margin:0;color:var(--muted)}
-    footer{border-top:1px solid rgba(255,255,255,.07);margin-top:64px;padding:26px 0 38px;color:#8f9caf;font-size:.9rem}
-    .footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .footer-links{display:flex;gap:18px;flex-wrap:wrap}
-    @media (max-width:920px){
-      nav a:not(.nav-cta){display:none}
-      .hero{grid-template-columns:1fr;padding-top:50px}
-      .hero-card{min-height:390px}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .privacy{grid-template-columns:1fr}
-    }
-    @media (max-width:580px){
-      .wrap{width:min(var(--max),calc(100% - 24px))}
-      .hero-card{display:none}
-      .hero{min-height:auto;padding:54px 0 30px}
-      .grid{grid-template-columns:1fr}
-      section{padding:54px 0}
-      .contact{padding:24px}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RenéCare 365 – mějte své zdraví přehledně na jednom místě</title>
+<meta name="description" content="RenéCare 365 pomáhá přehledně evidovat léky, lékaře, diagnózy, kontroly, očkování, doplňky stravy a péči o více členů.">
+<style>
+:root{--bg:#06111f;--panel:#0f1c2e;--line:#26384f;--text:#f5f8fc;--muted:#aebbd0;--blue:#1b82ff;--cyan:#22c7d8;--green:#18d097;--max:1340px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 60% 0%,rgba(28,119,225,.17),transparent 28%),linear-gradient(180deg,#071321 0%,#06111f 45%,#071321 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 56px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(5,15,27,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}.nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:14px;font-weight:900;font-size:1.45rem}.brand img{width:54px;height:54px;border-radius:14px;object-fit:cover;box-shadow:0 8px 26px rgba(22,123,232,.22)}.links{display:flex;align-items:center;gap:30px;color:#c5d0e1;font-size:1rem}.links a:hover{color:#fff}.play{min-width:220px;padding:11px 18px;border-radius:13px;background:linear-gradient(135deg,#0877ff,#1aa7ff);color:white;font-weight:850;box-shadow:0 12px 30px rgba(16,119,255,.24)}.play small{display:block;font-size:.74rem;font-weight:650;opacity:.8;margin-top:2px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;min-height:650px;padding:68px 0 48px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:850;color:#9fc1e8;margin-bottom:16px}h1{font-size:clamp(3.3rem,5.7vw,5.6rem);line-height:.98;letter-spacing:-.05em;margin:0 0 26px;max-width:760px}h1 .accent{color:#1fa6ff}.lead{max-width:700px;font-size:1.18rem;color:var(--muted);margin:0 0 32px}.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:58px;padding:0 21px;border-radius:13px;font-weight:850;border:1px solid var(--line);background:rgba(255,255,255,.025)}.btn.primary{border:none;background:linear-gradient(135deg,#0877ff,#19a7ff)}.triangle{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:13px solid white}
+.device-stage{position:relative;min-height:560px}.device-glow{position:absolute;inset:50px 30px 55px;background:radial-gradient(circle,rgba(24,119,235,.35),rgba(29,198,209,.07) 46%,transparent 72%);filter:blur(12px)}.phone{position:absolute;width:250px;height:500px;border-radius:36px;background:#081321;border:8px solid #1d293a;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.48);padding:18px 14px}.phone.left{left:25px;top:75px;transform:rotate(-8deg) scale(.93)}.phone.main{left:50%;top:5px;transform:translateX(-50%);z-index:3}.phone.right{right:8px;top:76px;transform:rotate(8deg) scale(.92)}.notch{width:90px;height:16px;border-radius:18px;background:#253348;margin:0 auto 15px}.pbar{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:850;margin-bottom:12px}.pbar img{width:25px;height:25px;border-radius:7px}.screen-title{font-size:1.18rem;font-weight:900;margin-bottom:12px}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tile{min-height:73px;background:#102037;border:1px solid #233752;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#dfe8f4;font-size:.69rem;font-weight:750;text-align:center}.tile strong{font-size:1.08rem;display:block;margin-bottom:4px}.list{display:grid;gap:9px}.row{background:#102037;border:1px solid #233752;border-radius:12px;padding:10px 11px;color:#aebed2;font-size:.73rem}.row b{color:white;display:block;font-size:.81rem;margin-bottom:2px}
+.section{padding:62px 0}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{min-height:190px;padding:24px;border-radius:18px;background:linear-gradient(180deg,#111e30,#0d1828);border:1px solid var(--line)}.icon{width:49px;height:49px;border-radius:13px;display:grid;place-items:center;background:#162e50;border:1px solid #23446e;font-size:1.38rem;margin-bottom:17px}.card h3{margin:0 0 7px;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);margin-top:22px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0b1727}.benefit{padding:22px;display:flex;gap:13px;align-items:flex-start}.benefit+.benefit{border-left:1px solid var(--line)}.bi{font-size:1.55rem}.benefit b{display:block}.benefit span{color:var(--muted);font-size:.84rem}
+.privacy-block{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;padding:46px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(135deg,#0b2139,#0a1c2c)}.shield{display:grid;place-items:center;min-height:280px;border-radius:20px;background:radial-gradient(circle,rgba(28,126,244,.25),transparent 56%)}.shield img{width:175px;height:175px;border-radius:36px;object-fit:cover;box-shadow:0 20px 45px rgba(0,0,0,.28)}.privacy-copy h2{font-size:clamp(2.3rem,4vw,4rem);line-height:1.02;letter-spacing:-.04em;margin:9px 0 20px}.privacy-copy p{color:var(--muted);font-size:1.04rem}.checks{display:grid;gap:12px;margin-top:18px}.check{display:flex;gap:10px}.check strong{color:var(--green)}
+.notice{margin-top:28px;padding:18px;border-radius:14px;border-left:4px solid var(--blue);background:#111c2d;color:#c8d5e4}.contact{margin-top:28px;padding:30px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(19,117,255,.13),rgba(32,202,216,.07));display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
+footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255,.07);color:#8e9db1}.foot{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.foot-brand{display:flex;align-items:center;gap:12px;color:white;font-weight:850}.foot-brand img{width:42px;height:42px;border-radius:11px}.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+@media(max-width:1100px){.links a:not(.play){display:none}.hero{grid-template-columns:1fr}.device-stage{width:min(650px,100%);margin:auto}.feature-grid{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(3){border-left:none;border-top:1px solid var(--line)}.benefit:nth-child(4){border-top:1px solid var(--line)}.privacy-block{grid-template-columns:1fr}}
+@media(max-width:650px){.wrap{width:min(var(--max),calc(100% - 24px))}.brand{font-size:1rem}.brand img{width:46px;height:46px}.play{display:none}.hero{min-height:auto;padding:52px 0 28px}h1{font-size:3.05rem}.device-stage{display:none}.feature-grid{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.benefit+.benefit,.benefit:nth-child(3),.benefit:nth-child(4){border-left:none;border-top:1px solid var(--line)}.privacy-block{padding:26px}.shield{min-height:200px}.shield img{width:140px;height:140px}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#uvod" aria-label="RenéCare 365">
-        <span class="logo">✚</span>
-        <span>RenéCare 365</span>
-      </a>
-      <nav aria-label="Hlavní navigace">
-        <a href="#funkce">Funkce</a>
-        <a href="#soukromi">Soukromí</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="privacy-policy.html">Zásady ochrany soukromí</a>
-        <a class="nav-cta" href="#funkce">Prohlédnout funkce</a>
-      </nav>
+<header>
+<div class="wrap nav">
+  <a class="brand" href="#uvod"><img src="renecare365-logo-web.png" alt="Logo RenéCare 365"><span>RenéCare 365</span></a>
+  <nav class="links" aria-label="Hlavní navigace">
+    <a href="#funkce">Funkce</a><a href="#o-aplikaci">O aplikaci</a><a href="#soukromi">Soukromí</a><a href="#kontakt">Kontakt</a>
+    <div class="play">▶ Stáhnout na Google Play<small>Již brzy</small></div>
+  </nav>
+</div>
+</header>
+
+<main>
+<section class="wrap hero" id="uvod">
+  <div>
+    <div class="eyebrow">Vaše zdraví pod kontrolou</div>
+    <h1>Mějte své zdraví přehledně na <span class="accent">jednom místě.</span></h1>
+    <p class="lead">RenéCare 365 vám pomáhá jednoduše evidovat léky, kontroly, diagnózy, lékaře, očkování a doplňky stravy – pro vás i vaše blízké.</p>
+    <div class="actions"><div class="btn primary">▶ Google Play · Již brzy</div><a class="btn" href="#funkce"><span class="triangle"></span>Prohlédnout funkce</a></div>
+  </div>
+
+  <div class="device-stage" aria-hidden="true">
+    <div class="device-glow"></div>
+    <div class="phone left"><div class="notch"></div><div class="screen-title">Léky</div><div class="list">
+      <div class="row"><b>Ranní léky</b>Čas užívání a připomínka</div><div class="row"><b>Večerní léky</b>Přehled naplánovaných dávek</div><div class="row"><b>Zásoba</b>Kontrola množství</div><div class="row"><b>Historie</b>Přehled záznamů</div>
+    </div></div>
+    <div class="phone main"><div class="notch"></div><div class="pbar"><img src="renecare365-logo-web.png" alt="">RenéCare 365</div><div class="screen-title">Moje péče</div>
+      <div class="tiles">
+        <div class="tile"><strong>💊</strong>Léky</div><div class="tile"><strong>🩺</strong>Lékaři</div><div class="tile"><strong>📋</strong>Diagnózy</div>
+        <div class="tile"><strong>📅</strong>Kontroly</div><div class="tile"><strong>💉</strong>Očkování</div><div class="tile"><strong>🌿</strong>Doplňky</div>
+        <div class="tile"><strong>👥</strong>Členové</div><div class="tile"><strong>🛡️</strong>Soukromí</div><div class="tile"><strong>⚙️</strong>Nastavení</div>
+      </div>
+      <div class="list" style="margin-top:10px"><div class="row"><b>Dnešní přehled</b>Důležité položky na jednom místě</div></div>
     </div>
-  </header>
+    <div class="phone right"><div class="notch"></div><div class="screen-title">Kontroly</div><div class="list">
+      <div class="row"><b>Nadcházející</b>Termíny a poznámky</div><div class="row"><b>Další návštěva</b>Uložený přehled</div><div class="row"><b>Historie</b>Dřívější kontroly</div><div class="row"><b>Připomínky</b>Důležité termíny</div>
+    </div></div>
+  </div>
+</section>
 
-  <main>
-    <section class="wrap hero" id="uvod">
-      <div>
-        <div class="eyebrow">RenéCare 365</div>
-        <h1>Mějte své zdraví přehledně na jednom místě.</h1>
-        <p>
-          RenéCare 365 pomáhá přehledně evidovat důležité informace o péči, lécích,
-          lékařích, diagnózách, kontrolách, očkování a doplňcích stravy – pro vás i další členy.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="#funkce">Prohlédnout funkce</a>
-          <a class="btn secondary" href="privacy-policy.html">Zásady ochrany soukromí</a>
-        </div>
-      </div>
+<section class="section" id="funkce"><div class="wrap">
+  <div class="feature-grid">
+    <article class="card"><div class="icon">💊</div><h3>Léky</h3><p>Přehled léků, dávkování, připomínky a zásoba.</p></article>
+    <article class="card"><div class="icon">🩺</div><h3>Lékaři</h3><p>Uložení kontaktů na lékaře a přehled odborné péče.</p></article>
+    <article class="card"><div class="icon">📋</div><h3>Diagnózy</h3><p>Přehledné uchování důležitých zdravotních informací.</p></article>
+    <article class="card"><div class="icon">📅</div><h3>Kontroly</h3><p>Evidence termínů a připomenutí důležitých událostí.</p></article>
+    <article class="card"><div class="icon">👥</div><h3>Více členů</h3><p>Možnost vést přehled pro více členů v jednom zařízení.</p></article>
+    <article class="card"><div class="icon">💉</div><h3>Očkování</h3><p>Evidence očkování a souvisejících záznamů.</p></article>
+    <article class="card"><div class="icon">🌿</div><h3>Doplňky stravy</h3><p>Evidence doplňků stravy, dávkování, připomínky a zásoba.</p></article>
+    <article class="card"><div class="icon">🔒</div><h3>Soukromí a záloha dat</h3><p>Důraz na soukromí a možnost vlastní šifrované zálohy.</p></article>
+  </div>
+  <div class="benefits">
+    <div class="benefit"><div class="bi">🛡️</div><div><b>Vaše data jsou v bezpečí</b><span>Důraz na ochranu osobních údajů.</span></div></div>
+    <div class="benefit"><div class="bi">🚫</div><div><b>Bez reklam</b><span>Čisté a přehledné prostředí.</span></div></div>
+    <div class="benefit"><div class="bi">👥</div><div><b>Pro jednotlivce i rodinu</b><span>Více členů v jednom zařízení.</span></div></div>
+    <div class="benefit"><div class="bi">☁️</div><div><b>Možnost zálohy dat</b><span>Vlastní šifrovaná záloha.</span></div></div>
+  </div>
+</div></section>
 
-      <div class="hero-card" aria-hidden="true">
-        <div class="phone one">
-          <div class="notch"></div>
-          <div class="screen-title">Moje péče</div>
-          <div class="mini-card"><b>Léky</b>Užívání a připomínky</div>
-          <div class="mini-card"><b>Lékaři</b>Přehled kontaktů</div>
-          <div class="mini-card"><b>Diagnózy</b>Vlastní evidence</div>
-          <div class="mini-card"><b>Kontroly</b>Termíny na jednom místě</div>
-        </div>
-        <div class="phone two">
-          <div class="notch"></div>
-          <div class="screen-title">RenéCare 365</div>
-          <div class="mini-card"><b>Očkování</b>Přehled záznamů</div>
-          <div class="mini-card"><b>Doplňky stravy</b>Užívání a zásoba</div>
-          <div class="mini-card"><b>Více členů</b>Oddělené přehledy</div>
-          <div class="mini-card"><b>Soukromí</b>Kontrola nad daty</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="funkce">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Co RenéCare 365 umí</h2>
-          <p>Funkce pro každodenní přehled o péči bez zbytečného komplikování.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card">
-            <div class="ico">💊</div>
-            <h3>Léky</h3>
-            <p>Evidence léků, časů užívání, připomínek a přehledu zásoby.</p>
-          </article>
-          <article class="card">
-            <div class="ico">🩺</div>
-            <h3>Lékaři</h3>
-            <p>Vlastní přehled lékařů a důležitých profesních kontaktů.</p>
-          </article>
-          <article class="card">
-            <div class="ico">📋</div>
-            <h3>Diagnózy</h3>
-            <p>Přehledná evidence diagnóz na jednom místě.</p>
-          </article>
-          <article class="card">
-            <div class="ico">📅</div>
-            <h3>Kontroly</h3>
-            <p>Termíny kontrol a návštěv, které chcete mít přehledně po ruce.</p>
-          </article>
-          <article class="card">
-            <div class="ico">👥</div>
-            <h3>Více členů</h3>
-            <p>Oddělené přehledy péče pro další členy rodiny nebo blízké osoby.</p>
-          </article>
-          <article class="card">
-            <div class="ico">💉</div>
-            <h3>Očkování</h3>
-            <p>Evidence očkování a souvisejících údajů v aplikaci.</p>
-          </article>
-          <article class="card">
-            <div class="ico">🌿</div>
-            <h3>Doplňky stravy</h3>
-            <p>Evidence užívání doplňků stravy včetně přehledu zásoby.</p>
-          </article>
-          <article class="card">
-            <div class="ico">🛡️</div>
-            <h3>Soukromí</h3>
-            <p>Jasné informace o datech a zásadách ochrany soukromí.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="soukromi">
-      <div class="wrap privacy">
-        <div class="box">
-          <div class="eyebrow">Soukromí</div>
-          <h2>Vaše data pod kontrolou</h2>
-          <p style="color:var(--muted)">
-            RenéCare 365 je navržena s důrazem na přehlednost, bezpečnost a srozumitelné
-            zacházení s údaji.
-          </p>
-          <div class="checks">
-            <div class="check"><span>✓</span><span>Žádné reklamní SDK.</span></div>
-            <div class="check"><span>✓</span><span>Žádný prodej osobních údajů.</span></div>
-            <div class="check"><span>✓</span><span>Podrobnosti jsou popsány v zásadách ochrany soukromí.</span></div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="eyebrow">Důležité</div>
-          <h2>Aplikace nenahrazuje lékaře</h2>
-          <p style="color:var(--muted)">
-            RenéCare 365 slouží jako pomocník pro osobní evidenci a organizaci zdravotních informací.
-            Neprovádí diagnózu a nenahrazuje odbornou zdravotní péči.
-          </p>
-          <div class="notice">
-            V akutním zdravotním stavu kontaktujte zdravotnickou záchrannou službu nebo jinou
-            odpovídající odbornou pomoc.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt">
-      <div class="wrap">
-        <div class="contact">
-          <div>
-            <h2>Kontakt</h2>
-            <p>Máte dotaz k RenéCare 365? Napište nám.</p>
-          </div>
-          <a class="btn primary" href="mailto:revmazdravi365@gmail.com">revmazdravi365@gmail.com</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer">
-      <div>© 2026 RenéCare 365</div>
-      <div class="footer-links">
-        <a href="#funkce">Funkce</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="privacy-policy.html">Zásady ochrany soukromí</a>
-      </div>
+<section class="section" id="o-aplikaci"><div class="wrap privacy-block" id="soukromi">
+  <div class="shield"><img src="renecare365-logo-web.png" alt="RenéCare 365"></div>
+  <div class="privacy-copy">
+    <div class="eyebrow">Soukromí a bezpečnost</div>
+    <h2>Vaše údaje mají zůstat pod vaší kontrolou.</h2>
+    <p>RenéCare 365 je vyvíjena s důrazem na soukromí, transparentnost a bezpečné používání.</p>
+    <div class="checks">
+      <div class="check"><strong>✓</strong><span>Důraz na ochranu osobních údajů.</span></div>
+      <div class="check"><strong>✓</strong><span>Bez reklamních systémů třetích stran.</span></div>
+      <div class="check"><strong>✓</strong><span>Transparentní zásady ochrany soukromí.</span></div>
     </div>
-  </footer>
+    <p><a href="zásady-ochrany-soukromí.html"><strong>Zobrazit zásady ochrany soukromí →</strong></a></p>
+  </div>
+</div>
+<div class="wrap">
+  <div class="notice"><strong>Důležité upozornění:</strong> RenéCare 365 není zdravotnický prostředek a nenahrazuje lékaře, odbornou zdravotní péči ani lékařskou diagnózu.</div>
+  <div class="contact" id="kontakt"><div><h2 style="margin:0 0 5px">Kontakt</h2><div style="color:var(--muted)">Dotazy k aplikaci RenéCare 365.</div></div><a class="btn primary" href="mailto:revmazdravi365@gmail.com">revmazdravi365@gmail.com</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot">
+  <div class="foot-brand"><img src="renecare365-logo-web.png" alt="">RenéCare 365</div>
+  <div class="foot-links"><a href="#funkce">Funkce</a><a href="#o-aplikaci">O aplikaci</a><a href="zásady-ochrany-soukromí.html">Zásady ochrany soukromí</a><a href="#kontakt">Kontakt</a></div>
+</div></footer>
 </body>
 </html>
