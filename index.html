@@ -13,17 +13,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,15,27,.88);backdrop-fi
 .device-stage{position:relative;min-height:560px}.device-glow{position:absolute;inset:50px 30px 55px;background:radial-gradient(circle,rgba(24,119,235,.35),rgba(29,198,209,.07) 46%,transparent 72%);filter:blur(12px)}.phone{position:absolute;width:250px;height:500px;border-radius:36px;background:#081321;border:8px solid #1d293a;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.48);padding:18px 14px}.phone.left{left:25px;top:75px;transform:rotate(-8deg) scale(.93)}.phone.main{left:50%;top:5px;transform:translateX(-50%);z-index:3}.phone.right{right:8px;top:76px;transform:rotate(8deg) scale(.92)}.notch{width:90px;height:16px;border-radius:18px;background:#253348;margin:0 auto 15px}.pbar{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:850;margin-bottom:12px}.pbar img{width:29px;height:25px;object-fit:contain}.screen-title{font-size:1.18rem;font-weight:900;margin-bottom:12px}.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tile{min-height:73px;background:#102037;border:1px solid #233752;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#dfe8f4;font-size:.69rem;font-weight:750;text-align:center}.tile strong{font-size:1.08rem;display:block;margin-bottom:4px}.list{display:grid;gap:9px}.row{background:#102037;border:1px solid #233752;border-radius:12px;padding:10px 11px;color:#aebed2;font-size:.73rem}.row b{color:white;display:block;font-size:.81rem;margin-bottom:2px}
 .section{padding:62px 0}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{min-height:190px;padding:24px;border-radius:18px;background:linear-gradient(180deg,#111e30,#0d1828);border:1px solid var(--line)}.icon{width:49px;height:49px;border-radius:13px;display:grid;place-items:center;background:#162e50;border:1px solid #23446e;font-size:1.38rem;margin-bottom:17px}.card h3{margin:0 0 7px;font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.94rem}
 .benefits{display:grid;grid-template-columns:repeat(4,1fr);margin-top:22px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0b1727}.benefit{padding:22px;display:flex;gap:13px;align-items:flex-start}.benefit+.benefit{border-left:1px solid var(--line)}.bi{font-size:1.55rem}.benefit b{display:block}.benefit span{color:var(--muted);font-size:.84rem}
-.privacy-block{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;padding:46px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(135deg,#0b2139,#0a1c2c)}.shield{display:grid;place-items:center;min-height:280px;border-radius:20px;background:radial-gradient(circle,rgba(28,126,244,.25),transparent 56%)}.shield img{width:220px;height:190px;object-fit:contain;filter:drop-shadow(0 20px 32px rgba(0,0,0,.28))}.privacy-copy h2{font-size:clamp(2.3rem,4vw,4rem);line-height:1.02;letter-spacing:-.04em;margin:9px 0 20px}.privacy-copy p{color:var(--muted);font-size:1.04rem}.checks{display:grid;gap:12px;margin-top:18px}.check{display:flex;gap:10px}.check strong{color:var(--green)}
+.privacy-block{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;padding:46px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(135deg,#0b2139,#0a1c2c)}.shield{display:grid;place-items:center;min-height:280px;border-radius:20px;background:radial-gradient(circle,rgba(28,126,244,.25),transparent 56%)}.shield img{width:190px;height:160px;object-fit:contain;filter:drop-shadow(0 20px 32px rgba(0,0,0,.28))}.privacy-copy h2{font-size:clamp(2.3rem,4vw,4rem);line-height:1.02;letter-spacing:-.04em;margin:9px 0 20px}.privacy-copy p{color:var(--muted);font-size:1.04rem}.checks{display:grid;gap:12px;margin-top:18px}.check{display:flex;gap:10px}.check strong{color:var(--green)}
 .notice{margin-top:28px;padding:18px;border-radius:14px;border-left:4px solid var(--blue);background:#111c2d;color:#c8d5e4}.contact{margin-top:28px;padding:30px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(19,117,255,.13),rgba(32,202,216,.07));display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
 footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255,.07);color:#8e9db1}.foot{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.foot-brand{display:flex;align-items:center;gap:12px;color:white;font-weight:850}.foot-brand img{width:50px;height:42px;object-fit:contain}.foot-links{display:flex;gap:20px;flex-wrap:wrap}
 @media(max-width:1100px){.links a:not(.play){display:none}.hero{grid-template-columns:1fr}.device-stage{width:min(650px,100%);margin:auto}.feature-grid{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(3){border-left:none;border-top:1px solid var(--line)}.benefit:nth-child(4){border-top:1px solid var(--line)}.privacy-block{grid-template-columns:1fr}}
-@media(max-width:650px){.wrap{width:min(var(--max),calc(100% - 24px))}.brand{font-size:1rem}.brand img{width:53px;height:46px}.play{display:none}.hero{min-height:auto;padding:52px 0 28px}h1{font-size:3.05rem}.device-stage{display:none}.feature-grid{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.benefit+.benefit,.benefit:nth-child(3),.benefit:nth-child(4){border-left:none;border-top:1px solid var(--line)}.privacy-block{padding:26px}.shield{min-height:200px}.shield img{width:172px;height:148px}}
+@media(max-width:650px){.wrap{width:min(var(--max),calc(100% - 24px))}.brand{font-size:1rem}.brand img{width:53px;height:46px}.play{display:none}.hero{min-height:auto;padding:52px 0 28px}h1{font-size:3.05rem}.device-stage{display:none}.feature-grid{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.benefit+.benefit,.benefit:nth-child(3),.benefit:nth-child(4){border-left:none;border-top:1px solid var(--line)}.privacy-block{padding:26px}.shield{min-height:200px}.shield img{width:150px;height:126px}}
 </style>
 </head>
 <body>
 <header>
 <div class="wrap nav">
-  <a class="brand" href="#uvod"><img src="renecare365-logo-web.svg" alt="Logo RenéCare 365"><span>RenéCare 365</span></a>
+  <a class="brand" href="#uvod"><img src="renecare365-r-logo.webp" alt="Logo RenéCare 365"><span>RenéCare 365</span></a>
   <nav class="links" aria-label="Hlavní navigace">
     <a href="#funkce">Funkce</a><a href="#o-aplikaci">O aplikaci</a><a href="#soukromi">Soukromí</a><a href="#kontakt">Kontakt</a>
     <div class="play">▶ Stáhnout na Google Play<small>Již brzy</small></div>
@@ -45,7 +45,7 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
     <div class="phone left"><div class="notch"></div><div class="screen-title">Léky</div><div class="list">
       <div class="row"><b>Ranní léky</b>Čas užívání a připomínka</div><div class="row"><b>Večerní léky</b>Přehled naplánovaných dávek</div><div class="row"><b>Zásoba</b>Kontrola množství</div><div class="row"><b>Historie</b>Přehled záznamů</div>
     </div></div>
-    <div class="phone main"><div class="notch"></div><div class="pbar"><img src="renecare365-logo-web.svg" alt="">RenéCare 365</div><div class="screen-title">Moje péče</div>
+    <div class="phone main"><div class="notch"></div><div class="pbar"><img src="renecare365-r-logo.webp" alt="">RenéCare 365</div><div class="screen-title">Moje péče</div>
       <div class="tiles">
         <div class="tile"><strong>💊</strong>Léky</div><div class="tile"><strong>🩺</strong>Lékaři</div><div class="tile"><strong>📋</strong>Diagnózy</div>
         <div class="tile"><strong>📅</strong>Kontroly</div><div class="tile"><strong>💉</strong>Očkování</div><div class="tile"><strong>🌿</strong>Doplňky</div>
@@ -79,7 +79,7 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
 </div></section>
 
 <section class="section" id="o-aplikaci"><div class="wrap privacy-block" id="soukromi">
-  <div class="shield"><img src="renecare365-logo-web.svg" alt="RenéCare 365"></div>
+  <div class="shield"><img src="renecare365-r-logo.webp" alt="RenéCare 365"></div>
   <div class="privacy-copy">
     <div class="eyebrow">Soukromí a bezpečnost</div>
     <h2>Vaše údaje mají zůstat pod vaší kontrolou.</h2>
@@ -101,7 +101,7 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
 </main>
 
 <footer><div class="wrap foot">
-  <div class="foot-brand"><img src="renecare365-logo-web.svg" alt="">RenéCare 365</div>
+  <div class="foot-brand"><img src="renecare365-r-logo.webp" alt="">RenéCare 365</div>
   <div class="foot-links"><a href="#funkce">Funkce</a><a href="#o-aplikaci">O aplikaci</a><a href="privacy-policy.html">Zásady ochrany soukromí</a><a href="podminky-pouzivani.html">Podmínky používání</a><a href="health-disclaimer.html">Zdravotní upozornění</a><a href="#kontakt">Kontakt</a></div>
 </div></footer>
 </body>
