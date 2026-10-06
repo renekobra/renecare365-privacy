@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 220" role="img" aria-labelledby="title desc">
+  <title id="title">RenéCare 365</title>
+  <desc id="desc">Stylizované písmeno R s listem a zeleným srdcem</desc>
+  <defs>
+    <linearGradient id="blueTop" x1="18" y1="10" x2="196" y2="92" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0c5edb"/>
+      <stop offset="0.5" stop-color="#08a9ef"/>
+      <stop offset="1" stop-color="#56e7f4"/>
+    </linearGradient>
+    <linearGradient id="blueBody" x1="56" y1="50" x2="215" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b2f91"/>
+      <stop offset="0.47" stop-color="#075ec8"/>
+      <stop offset="1" stop-color="#08bdf1"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" y1="76" x2="98" y2="206" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9bea00"/>
+      <stop offset="0.52" stop-color="#19b23e"/>
+      <stop offset="1" stop-color="#007c48"/>
+    </linearGradient>
+    <linearGradient id="heart" x1="176" y1="22" x2="219" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#92ed08"/>
+      <stop offset="0.48" stop-color="#30c51c"/>
+      <stop offset="1" stop-color="#008a4d"/>
+    </linearGradient>
+    <filter id="softShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#001a4b" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#softShadow)">
+    <path fill="url(#blueBody)" d="M46 38h73c51 0 83 20 83 55 0 25-16 43-46 51 17 11 31 28 47 52h26c-18-32-37-55-61-69 25-8 43-25 43-55 0-42-37-67-92-67H46z"/>
+    <path fill="url(#blueTop)" d="M15 0c9 16 22 27 42 34 25 9 58 14 100 14 31 0 54 7 66 20-8-23-31-39-68-47C111 12 63 18 15 0z"/>
+    <path fill="#fff" d="M72 56v57h41c27 0 44-10 44-28 0-19-16-29-44-29z"/>
+    <path fill="url(#blueBody)" d="M99 113c26 12 45 27 58 44 13 17 25 34 40 52h-40c-13-20-27-39-43-57-9-10-14-20-15-39z"/>
+    <path fill="url(#leaf)" d="M0 91c26-7 54-3 78 16 15 12 25 31 31 56-6 14-13 29-22 45-4-35-19-62-42-82-14-12-29-23-45-35z"/>
+    <path fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" d="M14 101c34 26 57 53 70 83"/>
+    <path fill="url(#leaf)" opacity=".78" d="M7 142c24 11 46 31 64 58-25-6-47-19-64-36z"/>
+    <path fill="url(#heart)" d="M198 25c-10-14-34-8-34 12 0 19 34 45 34 45s34-26 34-45c0-20-24-26-34-12z"/>
+    <path fill="#fff" opacity=".48" d="M181 27c8-7 18-7 25-3-10-1-18 2-24 10-5 7-7 14-6 20-5-10-3-20 5-27z"/>
+  </g>
+</svg>
