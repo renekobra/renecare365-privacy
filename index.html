@@ -18,6 +18,16 @@ header{position:sticky;top:0;z-index:50;background:rgba(5,15,27,.88);backdrop-fi
 footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255,.07);color:#8e9db1}.foot{display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.foot-brand{display:flex;align-items:center;gap:12px;color:white;font-weight:850}.foot-brand img{width:50px;height:42px;object-fit:contain}.foot-links{display:flex;gap:20px;flex-wrap:wrap}
 @media(max-width:1100px){.links a:not(.play){display:none}.hero{grid-template-columns:1fr}.device-stage{width:min(650px,100%);margin:auto}.feature-grid{grid-template-columns:repeat(2,1fr)}.benefits{grid-template-columns:repeat(2,1fr)}.benefit:nth-child(3){border-left:none;border-top:1px solid var(--line)}.benefit:nth-child(4){border-top:1px solid var(--line)}.privacy-block{grid-template-columns:1fr}}
 @media(max-width:650px){.wrap{width:min(var(--max),calc(100% - 24px))}.brand{font-size:1rem}.brand img{width:53px;height:46px}.play{display:none}.hero{min-height:auto;padding:52px 0 28px}h1{font-size:3.05rem}.device-stage{display:none}.feature-grid{grid-template-columns:1fr}.benefits{grid-template-columns:1fr}.benefit+.benefit,.benefit:nth-child(3),.benefit:nth-child(4){border-left:none;border-top:1px solid var(--line)}.privacy-block{padding:26px}.shield{min-height:200px}.shield img{width:150px;height:126px}}
+
+/* Ukazka aplikace na skutecnych obrazovkach; hero bez prekryvajicich se karet */
+.hero{display:flex;flex-direction:column;align-items:stretch;gap:28px;min-height:0;padding:42px 0 40px}
+.hero-art{display:block;margin:0;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.13);box-shadow:0 25px 75px rgba(0,0,0,.35);background:#c6edf9}
+.hero-art img{display:block;width:100%;height:auto;object-fit:contain}
+.hero-copy{max-width:1040px;text-align:center;margin:0 auto}
+.hero-copy h1{max-width:none;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1.1;margin-bottom:18px}
+.hero-copy .lead{max-width:950px;margin:0 auto 27px}
+.hero-copy .actions{justify-content:center}
+@media(max-width:650px){.hero{padding:24px 0 30px;gap:20px}.hero-art{border-radius:17px}.hero-copy h1{font-size:2.25rem}.hero-copy .lead{font-size:1.02rem}}
 </style>
 </head>
 <body>
@@ -33,30 +43,14 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
 
 <main>
 <section class="wrap hero" id="uvod">
-  <div>
+  <figure class="hero-art"><img src="renecare365-hero.avif" width="1200" height="675" alt="RenéCare 365 – ukázka skutečné aplikace, denní léky, péče o zdraví a přehled funkcí" fetchpriority="high" decoding="async"></figure>
+  <div class="hero-copy">
     <div class="eyebrow">Vaše zdraví pod kontrolou</div>
     <h1>Mějte své zdraví přehledně na <span class="accent">jednom místě.</span></h1>
     <p class="lead">RenéCare 365 vám pomáhá jednoduše evidovat léky, kontroly, diagnózy, lékaře, očkování a doplňky stravy – pro vás i vaše blízké. Připomínky se mohou zobrazovat také na kompatibilních chytrých hodinkách.</p>
     <div class="actions"><div class="btn primary">▶ Google Play · Již brzy</div><a class="btn" href="#funkce"><span class="triangle"></span>Prohlédnout funkce</a></div>
   </div>
 
-  <div class="device-stage" aria-hidden="true">
-    <div class="device-glow"></div>
-    <div class="phone left"><div class="notch"></div><div class="screen-title">Léky</div><div class="list">
-      <div class="row"><b>Ranní léky</b>Čas užívání a připomínka</div><div class="row"><b>Večerní léky</b>Přehled naplánovaných dávek</div><div class="row"><b>Zásoba</b>Kontrola množství</div><div class="row"><b>Historie</b>Přehled záznamů</div>
-    </div></div>
-    <div class="phone main"><div class="notch"></div><div class="pbar"><img src="renecare365-r-logo.webp" alt="">RenéCare 365</div><div class="screen-title">Moje péče</div>
-      <div class="tiles">
-        <div class="tile"><strong>💊</strong>Léky</div><div class="tile"><strong>🩺</strong>Lékaři</div><div class="tile"><strong>📋</strong>Diagnózy</div>
-        <div class="tile"><strong>📅</strong>Kontroly</div><div class="tile"><strong>💉</strong>Očkování</div><div class="tile"><strong>🌿</strong>Doplňky</div>
-        <div class="tile"><strong>👥</strong>Členové</div><div class="tile"><strong>🛡️</strong>Soukromí</div><div class="tile"><strong>⚙️</strong>Nastavení</div>
-      </div>
-      <div class="list" style="margin-top:10px"><div class="row"><b>Dnešní přehled</b>Důležité položky na jednom místě</div></div>
-    </div>
-    <div class="phone right"><div class="notch"></div><div class="screen-title">Kontroly</div><div class="list">
-      <div class="row"><b>Nadcházející</b>Termíny a poznámky</div><div class="row"><b>Další návštěva</b>Uložený přehled</div><div class="row"><b>Historie</b>Dřívější kontroly</div><div class="row"><b>Připomínky</b>Důležité termíny</div>
-    </div></div>
-  </div>
 </section>
 
 <section class="section" id="funkce"><div class="wrap">
