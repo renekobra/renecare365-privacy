@@ -26,6 +26,7 @@ const button = document.getElementById("delete-button");
 const status = document.getElementById("status");
 let auth = null;
 let db = null;
+let deletionEnabled = false;
 
 function show(message, type = "") {
   status.textContent = message;
@@ -39,6 +40,10 @@ try {
   if (!config?.apiKey || !config?.authDomain || !config?.projectId || !config?.appId) {
     throw new Error("Web Firebase config nebyla nastavena");
   }
+  // Když není aktivní App Check, web nesmí spouštět operace s Firestore.
+  if (!config.appCheckSiteKey) {
+    throw new Error("Web App Check site key chybí");
+  }
   const app = initializeApp(config);
   // Pro produkci s vynucenou ochranou Firestore App Check je nutný webový
   // veřejný site key a registrace webové aplikace ve Firebase App Check.
@@ -50,8 +55,12 @@ try {
   }
   auth = getAuth(app);
   db = getFirestore(app);
-  button.disabled = false;
-  show("Pro bezpečné smazání se přihlaste a potvrďte svůj požadavek.");
+  deletionEnabled = config.accountDeletionEnabled === true;
+  button.disabled = !deletionEnabled;
+  show(deletionEnabled
+    ? "Pro bezpečné smazání se přihlaste a potvrďte svůj požadavek."
+    : "Automatické mazání účtů ještě není aktivované. Probíhá bezpečnostní testování.",
+    deletionEnabled ? "" : "error");
 } catch (error) {
   button.disabled = true;
   show("Automatické mazání účtů ještě není aktivované.", "error");
@@ -59,7 +68,8 @@ try {
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  if (!auth || !db) return;
+  // Druhá pojistka: ani programově odeslaný formulář nespustí mazání.
+  if (!auth || !db || !deletionEnabled) return;
 
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
