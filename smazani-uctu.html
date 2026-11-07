@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smazání účtu Premium – RenéCare 365</title>
+<meta name="description" content="Bezpečné samoobslužné smazání účtu RenéCare 365 Premium a jeho serverových údajů.">
+<style>
+:root{color-scheme:dark;--bg:#071321;--card:#102237;--text:#f4f8ff;--muted:#adbbcd;--line:#2b435f;--blue:#42a2ff;--red:#ff7777}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% 0,rgba(26,105,215,.17),transparent 45%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+header{border-bottom:1px solid var(--line);background:#081827}
+nav,main,footer{width:min(760px,calc(100% - 36px));margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0}
+a{color:#90c4ff}
+.brand{display:flex;gap:12px;align-items:center;font-weight:800;color:white;text-decoration:none}
+.brand img{width:44px;height:40px;object-fit:contain}
+main{padding:48px 0 36px}
+small.kicker{color:var(--blue);font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:16px 0 14px}
+p{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin-top:25px}
+.card h2{margin:0 0 12px;font-size:1.3rem}
+ul{padding-left:22px;color:#c7d4e3}
+li{margin:9px 0}
+label{display:block;font-weight:650;margin:16px 0 8px}
+input[type=email],input[type=password]{width:100%;min-height:48px;background:#081827;border:1px solid #536b87;border-radius:11px;color:white;padding:11px 13px;font:inherit}
+.check{display:flex;gap:10px;align-items:flex-start;margin:18px 0}
+.check label{margin:0;font-weight:500}
+.check input{width:18px;height:18px;flex:none;margin-top:4px}
+button{width:100%;min-height:50px;font:inherit;font-weight:800;color:white;background:#c03440;border:0;border-radius:11px;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}
+.status{padding:12px 14px;background:#132d47;border-radius:11px;min-height:45px;margin-top:14px;white-space:pre-wrap}
+.status.error{border:1px solid #a94b4b;color:#ffd2d2}
+.status.good{border:1px solid #3d9975;color:#caffdd}
+.note{border-left:3px solid var(--blue);padding:10px 16px;background:#10253b;border-radius:8px}
+footer{padding:24px 0 36px;color:var(--muted);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header><nav><a href="index.html" class="brand"><img src="renecare365-r-logo.webp" alt="">RenéCare 365</a><a href="index.html">Zpět na web</a></nav></header>
+<main>
+<small class="kicker">Soukromí a vaše práva</small>
+<h1>Smazání účtu Premium</h1>
+<p>Účet RenéCare 365 Premium můžete smazat bez kontaktování provozovatele a bez opětovné instalace aplikace. Pro ochranu účtu se musíte znovu přihlásit svým e-mailem a heslem.</p>
+<section class="card">
+<h2>Co se při smazání stane?</h2>
+<ul>
+<li>Neodvolatelně se odstraní přihlašovací účet Firebase Authentication a k němu navázané soukromé záznamy Premium na našem serveru.</li>
+<li>Přijdete o přístup k placeným funkcím i o případné zvýhodnění testera přiřazené ke smazanému účtu.</li>
+<li>Osobní zdravotní údaje uložené v telefonu tímto vzdáleným smazáním <strong>nejsou odstraněny</strong>. Ty můžete samostatně vymazat v aplikaci v části Soukromí a data.</li>
+<li>Dříve vytvořené šifrované záložní soubory mimo aplikaci se neodstraní.</li>
+<li>Pokud máte aktivní předplatné Google Play, samotné smazání účtu ho nemusí zrušit. Před smazáním jej případně zrušte v <a href="https://play.google.com/store/account/subscriptions" rel="noopener noreferrer">předplatném Google Play</a>.</li>
+</ul>
+<p class="note">Záznamy, které je nutné uchovat ze zákonných důvodů, mohou podléhat samostatným pravidlům uchování popsaným v <a href="privacy-policy.html">zásadách soukromí</a>. Sdílené veřejné odborné údaje nejsou soukromým zdravotním záznamem uživatele.</p>
+</section>
+<section class="card">
+<h2>Smazat můj účet</h2>
+<form id="delete-form" autocomplete="on">
+<label for="email">E-mail účtu Premium</label>
+<input id="email" name="email" type="email" autocomplete="username" required maxlength="254">
+<label for="password">Heslo účtu Premium</label>
+<input id="password" name="password" type="password" autocomplete="current-password" required minlength="6">
+<div class="check"><input id="confirm" type="checkbox" required><label for="confirm">Rozumím tomu, že smazání účtu a souvisejících serverových údajů je nevratné.</label></div>
+<button id="delete-button" type="submit" disabled>Trvale smazat můj účet</button>
+</form>
+<div id="status" class="status" role="status" aria-live="polite">Kontroluji dostupnost zabezpečené služby…</div>
+<p>Zapomenuté heslo si můžete obnovit přes možnost „Zapomenuté heslo“ v aplikaci RenéCare 365. Formulář zde neodesílá přihlašovací údaje provozovateli webu; autentizace probíhá přes Firebase.</p>
+</section>
+</main>
+<footer>RenéCare 365 · <a href="privacy-policy.html">Zásady ochrany soukromí</a></footer>
+<script type="module" src="smazani-uctu.js"></script>
+</body>
+</html>
