@@ -5,4 +5,7 @@ export const firebaseConfig = {
   authDomain: "",
   projectId: "",
   appId: "",
+  // Volitelné pouze po nastavení webu v Firebase App Check (veřejný SITE key).
+  // Při vynuceném Firestore App Check je tento klíč nutný.
+  appCheckSiteKey: "",
 };
