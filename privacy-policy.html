@@ -110,7 +110,7 @@
       RenéCare 365 je aplikace pro evidenci a organizaci zdravotních informací.
       Většina osobních zdravotních údajů je ukládána pouze v zařízení uživatele.
     </p>
-    <div class="meta">Aktualizováno: 2. října 2026</div>
+    <div class="meta">Aktualizováno: 8. listopadu 2026</div>
   </section>
 
   <div class="grid">
@@ -144,9 +144,9 @@
     </section>
 
     <section class="card">
-      <h2>4. Ruční šifrovaná záloha</h2>
+      <h2>4. Ruční a automatické šifrované zálohy</h2>
       <p>
-        Uživatel může v části <strong>Soukromí a data</strong> ručně vytvořit vlastní záložní soubor RenéCare 365.
+        Uživatel může v části <strong>Soukromí a data</strong> ručně vytvořit vlastní záložní soubor RenéCare 365. Aplikace podporuje také automatické vytváření šifrovaných záloh při změně zdravotních záznamů, pokud si uživatel nastaví cílové umístění.
         Obsah zálohy je před uložením zašifrován heslem, které si zvolí uživatel.
       </p>
       <ul>
@@ -167,7 +167,7 @@
         a systémový přenos lokálních dat aplikace mezi zařízeními jsou vypnuté.
       </p>
       <p>
-        Ruční šifrovaná záloha popsaná výše je samostatná funkce spuštěná výhradně uživatelem.
+        Šifrované zálohy vytvářené samotnou aplikací, ručně nebo automaticky, jsou oddělené od systémového zálohování Androidu.
       </p>
     </section>
 
@@ -187,18 +187,15 @@
     </section>
 
     <section class="card">
-      <h2>7. Společná databáze lékařů</h2>
+      <h2>7. Databáze lékařů</h2>
       <p>
-        Pokud uživatel dobrovolně navrhne ručně zadaného lékaře do společné databáze,
-        mohou být odeslány pouze veřejné profesní údaje lékaře, například jméno, odbornost,
-        profesní telefon, profesní e-mail, čas odeslání a stav návrhu.
+        Aplikace používá veřejné databázové zdroje údajů o lékařích. Osobní zdravotní záznamy uživatele nejsou součástí veřejného katalogu.
       </p>
       <p>
         Diagnózy, léky, dávkování, poznámky ani jiné zdravotní údaje uživatele se tímto návrhem neodesílají.
       </p>
       <p>
-        Smazání místních dat v telefonu samo o sobě neodstraňuje dříve odeslaný návrh lékaře ze společné databáze.
-        V případě požadavku na řešení takového záznamu lze použít kontaktní e-mail uvedený výše.
+        Pokud potřebujete řešit dříve odeslané údaje či návrhy, kontaktujte provozovatele na e-mailu uvedeném výše.
       </p>
     </section>
 
@@ -217,9 +214,13 @@
         Cloud Firestore, Firebase App Check a Google Play služby potřebné pro funkce aplikace a ochranu jejího provozu.
       </p>
       <p>
-        Firebase Authentication je používán technicky pro anonymní přihlášení tam, kde je potřeba přístup
-        ke společným online funkcím aplikace.
+        Firebase Authentication může být použito pro anonymní přihlášení a pro dobrovolný e-mailový účet RenéCare 365. Při registraci a přihlášení zpracovává přihlašovací e-mail a ověřovací stav účtu. Heslo pro přihlášení zpracovává Firebase Authentication, aplikace jej trvale neukládá.
       </p>
+    </section>
+
+    <section class="card">
+      <h2>Odstranění e-mailového účtu</h2>
+      <p>O odstranění přihlašovacího účtu a serverových osobních údajů souvisejících s tímto účtem lze požádat na stránce <a href="delete-account.html">Žádost o smazání účtu</a>. Smazání účtu samo o sobě nesmaže místní zdravotní údaje nebo záložní soubory uložené uživatelem mimo aplikaci.</p>
     </section>
 
     <section class="card">
