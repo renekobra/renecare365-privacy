@@ -28,6 +28,19 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
 .hero-copy .lead{max-width:950px;margin:0 auto 27px}
 .hero-copy .actions{justify-content:center}
 @media(max-width:650px){.hero{padding:24px 0 30px;gap:20px}.hero-art{border-radius:17px}.hero-copy h1{font-size:2.25rem}.hero-copy .lead{font-size:1.02rem}}
+
+/* Premium je z hlavní stránky dosažitelné také na telefonu. Nespouští nákup. */
+#premium{scroll-margin-top:105px}
+.premium-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:42px 46px;border:1px solid #2d4869;border-radius:24px;background:linear-gradient(125deg,#102941,#0d1a2b 68%);box-shadow:0 18px 44px rgba(0,0,0,.16)}
+.premium-copy h2{margin:8px 0 14px;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-.035em}
+.premium-copy h2 span{color:#78b9ff}
+.premium-copy p{font-size:1.08rem;color:#c3d3e6;max-width:580px;margin:0 0 22px}
+.premium-prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.premium-price{border:1px solid #365476;background:#132c46;border-radius:18px;padding:23px 18px}
+.premium-price span,.premium-price small{display:block;color:#b8cde3}
+.premium-price strong{display:block;color:#fff;font-size:clamp(1.9rem,3vw,2.6rem);line-height:1.25;margin:7px 0}
+@media(max-width:950px){.premium-panel{grid-template-columns:1fr}}
+@media(max-width:650px){.premium-panel{padding:24px 20px;border-radius:18px}.premium-prices{grid-template-columns:1fr 1fr;gap:9px}.premium-price{padding:16px 12px}.premium-price strong{font-size:1.8rem}.premium-copy p{font-size:1rem}}
 </style>
 </head>
 <body>
@@ -35,7 +48,7 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
 <div class="wrap nav">
   <a class="brand" href="#uvod"><img src="renecare365-r-logo.webp" alt="Logo RenéCare 365"><span>RenéCare 365</span></a>
   <nav class="links" aria-label="Hlavní navigace">
-    <a href="#funkce">Funkce</a><a href="#o-aplikaci">O aplikaci</a><a href="#soukromi">Soukromí</a><a href="#kontakt">Kontakt</a>
+    <a href="#funkce">Funkce</a><a href="#o-aplikaci">O aplikaci</a><a href="#premium">Premium</a><a href="#soukromi">Soukromí</a><a href="#kontakt">Kontakt</a>
     <div class="play">▶ Stáhnout na Google Play<small>Již brzy</small></div>
   </nav>
 </div>
@@ -48,7 +61,7 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
     <div class="eyebrow">Vaše zdraví pod kontrolou</div>
     <h1>Mějte své zdraví přehledně na <span class="accent">jednom místě.</span></h1>
     <p class="lead">RenéCare 365 vám pomáhá jednoduše evidovat léky, kontroly, diagnózy, lékaře, očkování a doplňky stravy – pro vás i vaše blízké. Připomínky se mohou zobrazovat také na kompatibilních chytrých hodinkách.</p>
-    <div class="actions"><div class="btn primary">▶ Google Play · Již brzy</div><a class="btn" href="#funkce"><span class="triangle"></span>Prohlédnout funkce</a></div>
+    <div class="actions"><div class="btn primary">▶ Google Play · Již brzy<a class="btn" href="#premium">Premium a ceny</a></div><a class="btn" href="#funkce"><span class="triangle"></span>Prohlédnout funkce</a></div>
   </div>
 
 </section>
@@ -70,6 +83,21 @@ footer{padding:30px 0 40px;margin-top:60px;border-top:1px solid rgba(255,255,255
     <div class="benefit"><div class="bi">🚫</div><div><b>Bez reklam</b><span>Čisté a přehledné prostředí.</span></div></div>
     <div class="benefit"><div class="bi">👥</div><div><b>Pro jednotlivce i rodinu</b><span>Více členů v jednom zařízení.</span></div></div>
     <div class="benefit"><div class="bi">☁️</div><div><b>Možnost zálohy dat</b><span>Vlastní šifrovaná záloha.</span></div></div>
+  </div>
+</div></section>
+
+<section class="section" id="premium" aria-labelledby="premium-title"><div class="wrap">
+  <div class="premium-panel">
+    <div class="premium-copy">
+      <div class="eyebrow">Rodinné funkce</div>
+      <h2 id="premium-title">RenéCare 365 <span>Premium</span></h2>
+      <p>Jednoduchá péče o více členů rodiny na jednom místě. Vlastní základní profil zůstává zdarma.</p>
+      <a class="btn primary" href="premium-podminky.html">Zobrazit ceny a podmínky Premium</a>
+    </div>
+    <div class="premium-prices" aria-label="Ceník Premium">
+      <div class="premium-price"><span>Měsíční Premium</span><strong>75 Kč</strong><small>za měsíc</small></div>
+      <div class="premium-price"><span>Roční Premium</span><strong>500 Kč</strong><small>za rok</small></div>
+    </div>
   </div>
 </div></section>
 
